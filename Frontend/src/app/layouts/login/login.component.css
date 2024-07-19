@@ -1,0 +1,9 @@
+button{
+    width: 70%;
+}
+
+.container-fluid{
+    height: 100vh;
+    background-image: url(../../../assets/Desktop.webp);
+    background-position-y: top;
+}

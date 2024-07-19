@@ -1,0 +1,15 @@
+.container-fluid{
+    background-image: url(../../../assets/yello.webp);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+button{
+    width: 100%;
+}

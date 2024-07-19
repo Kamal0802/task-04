@@ -1,0 +1,23 @@
+<div class="container-fluid shadow">
+  <div class="search">
+    <input
+      type="text"
+      class="form-control mt-3 shadow"
+      placeholder="🔍 search or start a new chat"
+    />
+  </div>
+
+  <div class="row justify-content-evenly mt-3 p-3 text" *ngFor="let user of UserForSideBar">
+    <div class="d-flex" routerLink="chat-window/{{ user._id }}">
+      <div class="col-3">
+        <img src="{{user.profilePic}}" alt="" width="50px" />
+      </div>
+      <div class="col-7 mt-2">
+        <h4>{{ user.userName | uppercase }}</h4>
+      </div>
+      <div class="col-1">
+        <button class="btn btn-success" routerLink="/chat-window/{{user._id}}">Chat</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.container-fluid {
+    background-image: url(../../../assets//stock-vector-social-media-sketch-vector-seamless-doodle-pattern-1660950727.jpg);
+    height: 100vh;
+   
+
+
+}
+.header {
+    background-color: rgb(176, 186, 186);
+    position: sticky;
+    top: 0;
+}
+
+.textbox {
+    background-color: rgb(176, 186, 186);
+    position: sticky;
+    bottom: 0;
+}
+
+.messege-1 {
+    width: 20rem;
+    border-radius: 40px;
+}
+
+.main{
+    height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 3em;
+
+    
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+}

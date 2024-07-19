@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row header shadow p-3">
+    <div class="col-1" routerLink="/dashboard/profile/{{id}}">
+      <img src="{{ currentUser.profilePic }}" alt="" width="50px" />
+      <ng-template #loading>
+        <p>Loading...</p>
+      </ng-template>
+    </div>
+    <div class="col-6">
+      <h1>{{ currentUser.userName | uppercase }}</h1>
+    </div>
+
+    <div class="col-1">
+      <i
+        class="fa-solid fa-right-to-bracket btn btn-danger mt-2"
+        style="font-size: 1.5rem; margin-left: 17rem"
+        routerLink="/dashboard"
+      ></i>
+    </div>
+  </div>
+
+  <div class="main" #chatContainer>
+    <div class="" *ngFor="let msg of messages; let i = index">
+      <div
+        class="row"
+        [ngClass]="{
+          'justify-content-start': userId !== msg.sender,
+          'justify-content-end': userId == msg.sender
+        }"
+      >
+        <div
+          class="messege-1 m-4 bg-secondary"
+          [ngClass]="{
+            'bg-secondary': userId !== msg.sender,
+            'bg-dark': userId == msg.sender
+          }"
+        >
+          <p class="p-3 text-light">
+            {{ msg.content }}
+          </p>
+          <p class="text-end text-light">
+            <span class="me-2">{{ userId == msg.sender ? "you" : "" }}</span>
+
+            <i class="fa-regular fa-clock me-2"></i
+            >{{ msg.timestamp | date : "shortTime" }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row p-3 textbox">
+    <div class="col-11">
+      <div class="search">
+        <i class="fa-solid fa-camera me-3 mt-2 h5"></i> |
+        <i class="fa-regular fa-folder-open me-3 ms-3 mt-2 h5"></i>
+        <input
+          type="text"
+          class="form-control shadow"
+          placeholder="Type a Messege...."
+          [(ngModel)]="textBox"
+        />
+        <button class="btn btn-secondary ms-3" (click)="sendText()">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
